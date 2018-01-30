@@ -1,0 +1,96 @@
+<div class="row">
+
+<div class="col-md-4">
+
+
+  <div class="box box-danger">
+
+    <div class="box-header">
+
+    </div>
+
+    <div class="box-body text-center">
+      <div class="col-md-12">
+        <img src="/images/default.png" class="img-responsive" width="300" alt="">
+      </div>
+      <div class="col-md-12">
+        <h2></h2>
+      </div>
+
+    </div>
+
+    <div class="modal fade" id="modalAdd">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="defaultModalLabel">Edit Foto Profile</h4>
+                </div>
+                <div class="modal-body">
+                  {!! Form::open(['route' => 'changeImage', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
+                    <fieldset>
+
+                      <div class="col-md-12">
+                        {{ Form::label('image', 'Berkas ( Gambar ):') }}
+                        <div class="form-group">
+                          <div class="btn btn-default btn-file">
+                            <i class="fa fa-paperclip"></i> Upload File
+                            {{ Form::file('image', ['accept' => 'image/*']) }}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <button class="btn btn-success" type="submit">Simpan</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="defaultModalLabel">Edit Foto Profile</h4>
+                </div>
+                <div class="modal-body">
+                  {!! Form::open(['route' => 'changePassword', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
+                    <fieldset>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          {{ Form::label('password', 'Password :') }}
+          			          {{ Form::password('password', ['class' => 'form-control', 'required' => '']) }}
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <button class="btn btn-success" type="submit">Simpan</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-footer">
+      <div class="col-md-12">
+        <a href="#!" data-toggle="modal" data-target="#modalPassword" class="btn btn-default"><i class="fa fa-edit"></i> Edit Password</a>
+        <a href="#!" data-toggle="modal" data-target="#modalAdd" class="btn btn-default pull-right"><i class="fa fa-image"></i> Edit Picture</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>

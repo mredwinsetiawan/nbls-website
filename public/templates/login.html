@@ -1,0 +1,30 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#!"><b>BABASTUDIO E-LEARNING</b></a>
+  </div>
+
+  <div class="login-box-body">
+    <p class="login-box-msg text-center"><strong>Tempat Kursus Online Bersertifikat #1 di Indonesia. Babastudio E-Learning menggunakan sistem NBLS yang telah diuji selama 10 tahun pada puluhan ribu peserta. Buruan Daftar Sekarang !</strong></p>
+  </div>
+  <div class="login-box-body">
+    <form name="loginForm" ng-submit="doLogin(loginForm)">
+      <div class="form-group has-feedback">
+        <input name="email" type="email" class="form-control" placeholder="Email" ng-model="login.email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input name="password" type="password" class="form-control" placeholder="Password" ng-model="login.password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#!" class="pull-left">Daftar Baru</a><br>
+          <a href="#" class="pull-left">Lupa password ?</a><br>
+        </div>
+        <div class="col-md-5">
+          <button type="submit" class="btn btn-info btn-block btn-flat pull-right">Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
