@@ -58,5 +58,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'roles' => \App\Http\Middleware\CheckRole::class,
         'authen' => \App\Http\Middleware\Authen::class,
+        'authen.tenant' => \App\Http\Middleware\TenantAuthen::class,
     ];
 }

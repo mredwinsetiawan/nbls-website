@@ -19,7 +19,11 @@ class User extends Authenticatable
     }
 
     public function role(){
-      return $this->hasOne('App\Role', 'id', 'role_id');
+        return $this->hasOne('App\Role', 'id', 'role_id');
+    }
+
+    public function tenant(){
+        return $this->hasOne('App\Tenant', 'id', 'tenant_id');
     }
 
     private function checkIfUserHasRole($need_role){
@@ -39,18 +43,5 @@ class User extends Authenticatable
       return false;
     }
 
-
-    // leader
-    public function researches(){
-        return $this->hasMany('App\Research', 'author_id');
-    }
-
-    public function research(){
-      return $this->belongsTo('App\Research', 'reviewer_id');
-    }
-
-    public function risets(){
-      return $this->belongsToMany('App\Research');
-    }
 
 }

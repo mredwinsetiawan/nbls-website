@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hibah</title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <title>Baba Studio</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -46,10 +46,8 @@
     <div class="login-logo">
         <a href="#!"><b>{{ $tenant->name }}</b></a>
     </div>
-    <!-- /.login-logo -->
     <div class="login-box-body">
-        <form method="POST" action="{{ route('login') }}">
-
+        <form method="POST" action="{{ route('tenant.login', $tenant->subdomain) }}">
             {{ csrf_field() }}
             <div class="form-group has-feedback">
                 <input name="email" type="email" class="form-control" placeholder="Email">
@@ -76,10 +74,6 @@
                 <!-- /.col -->
             </div>
         </form>
-        <!-- /.social-auth-links -->
-
-        <!-- <a href="register.html" class="text-center">Register a new membership</a> -->
-
     </div>
     <!-- /.login-box-body -->
 </div>
@@ -101,9 +95,7 @@
 <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
 
 <script type="text/javascript">
-
     var baseUrl = "{{ url('/') }}";
-
 </script>
 <script src="/plugins/light-gallery/js/lightgallery-all.js"></script>
 
@@ -111,25 +103,11 @@
 
 <script src="/js/select2.min.js"></script>
 
-<!-- <script type="text/javascript">
-  $('.select2-multi').select2();
-</script> -->
-
-<!-- Include external JS libs. -->
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
 
-<!-- Include Editor JS files. -->
-<script src="/js/froala_editor.min.js"></script>
-<!-- <script type="text/javascript" src="/floara/js/plugins/image.mi"></script> -->
-
-<!-- Initialize the editor. -->
-<script> $(function () {
-        $('.text-editor').froalaEditor()
-    }); </script>
 
 <script type="text/javascript">
     $('.select2-multi').select2();

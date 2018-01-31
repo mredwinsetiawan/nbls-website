@@ -43,13 +43,14 @@
 <body class="hold-transition skin-blue-light sidebar-mini">
 <div class="wrapper">
 
-@include('layouts.partials.header')
+@include('layouts.partials-tenant.header')
 
-@include('layouts.partials.sidebar')
+@include('layouts.partials-tenant.sidebar')
 
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
 
         <section class="content">
             @yield('content')
@@ -57,7 +58,7 @@
 
     </div>
 
-    @include('layouts.partials.footer')
+    @include('layouts.partials-tenant.footer')
 
     <div class="control-sidebar-bg"></div>
 </div>

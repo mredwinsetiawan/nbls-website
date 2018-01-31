@@ -4,7 +4,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>BS</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Front</b></span>
+    <span class="logo-lg"><b>Baba Studio</b></span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
@@ -30,7 +30,7 @@
             <!-- User image -->
             <li class="user-header">
               <p>
-                {{ Auth::user()->name }} -
+                {{ Auth::user()->fullname }} - {{ Auth::user()->role->name }}
               </p>
             </li>
 
@@ -40,7 +40,7 @@
                 <a href="{{ url('me') }}" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <form class="" action="{{ route('logout') }}" method="post">
+                <form class="" action="{{ route('tenant.logout', 'tenant2') }}" method="post">
                   {{ csrf_field() }}
                   <button class="btn btn-default btn-flat" type="submit">Logout</button>
                 </form>

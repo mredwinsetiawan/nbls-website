@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hibah</title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Baba Studio</title>
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
@@ -38,7 +38,6 @@
 
     <link rel="stylesheet" href="/css/froala_style.min.css">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('style')
 </head>
@@ -49,7 +48,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <form method="POST" action="{{ route('login', 'test') }}">
+        <form method="POST" action="{{ route('login') }}">
 
             {{ csrf_field() }}
 

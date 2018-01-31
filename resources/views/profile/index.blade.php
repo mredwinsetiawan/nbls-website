@@ -34,7 +34,7 @@
                     <h4 class="modal-title" id="defaultModalLabel">Edit Foto Profile</h4>
                 </div>
                 <div class="modal-body">
-                  {!! Form::open(['route' => 'changeImage', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
+                  {!! Form::open(['route' => 'me.update.image', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
                     <fieldset>
 
                       <div class="col-md-12">
@@ -67,7 +67,7 @@
                     <h4 class="modal-title" id="defaultModalLabel">Edit Foto Profile</h4>
                 </div>
                 <div class="modal-body">
-                  {!! Form::open(['route' => 'changePassword', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
+                  {!! Form::open(['route' => 'me.update.password', 'method' => 'POST', 'data-parsley-validate' => '', 'files' => true]) !!}
                     <fieldset>
 
                       <div class="col-md-12">
