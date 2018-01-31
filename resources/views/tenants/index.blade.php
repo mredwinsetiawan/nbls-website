@@ -93,7 +93,7 @@
                                 <td>
                                     {{--<a href="#!" title="Open tenant" class="btn btn-success btn-xs"><i--}}
                                                 {{--class="fa fa-user-plus"></i> Pilih Expert</a>--}}
-                                    <a href="http://{{ $tenant->subdomain  }}.babastudio.test" target="_blank"
+                                    <a href="http://{{ $tenant->subdomain  }}.{{ env('HOST_NAME') }}" target="_blank"
                                        class="btn btn-info btn-xs"><i
                                                 class="fa fa-globe"></i> Website</a>
                                     <a href="{{ route('tenants.show', $tenant->id) }}" class="btn btn-info btn-xs"><i

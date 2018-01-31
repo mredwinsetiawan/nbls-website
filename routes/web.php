@@ -7,7 +7,7 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('register', 'HomeController@register')->name('register');
 
 
-Route::group(array('domain' => 'babastudio.test'), (function () {
+Route::group(array('domain' => env('HOST_NAME')), (function () {
 
     Route::get('/', [
         'as' => '/',
@@ -62,7 +62,10 @@ Route::group(array('domain' => 'babastudio.test'), (function () {
 
         Route::resource('users', 'UserController');
 
-        Route::put('user/update-role/{id}', 'UserController@changeRole')->name('changeRole');
+        Route::put('user/update-role/{id}', [
+            'as' => 'changeRole',
+            'uses' => 'UserController@changeRole'
+        ]);
 
         Route::post('users/select-expert', 'UserController@selectExpert')->name('users.selectExpert');
 
@@ -72,7 +75,7 @@ Route::group(array('domain' => 'babastudio.test'), (function () {
 
 /* Tenant Routes */
 Route::group(array(
-    'domain' => '{subdomain}.babastudio.test',
+    'domain' => '{subdomain}.' . env('HOST_NAME'),
     'as' => 'tenant.'
 ), (function () {
 
